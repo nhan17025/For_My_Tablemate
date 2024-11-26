@@ -5,10 +5,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main2.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Borel&family=Pacifico&family=Patrick+Hand+SC&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Borel&family=Pacifico&family=Patrick+Hand+SC&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
+    <script src="main.js"></script>
     <body class="hinhnen" style="display:flex">
         <div class="khung" style="rotate: 45deg;">
             <div class="vuong"></div> 
@@ -26,7 +25,20 @@
             <div class="tron1con2"></div> 
         </div>
         <div style="z-index: 3 ; background-color: rgba(255, 255, 255, 0); position: absolute; margin-top: 300px;">
-            <p id="chu" > I LOVE YOU</p>
+            <p id="chu" > DO YOU LOVE ME?</p>
         </div>
+        <div style="justify-content: center;display: flex;align-items: center;position: absolute; background-color:rgba(164, 113, 113, 0.511); right:30vw;top:75vh; width: 100px; border-radius: 10px; border:solid ">
+            <a href="https://nhan17025.github.io/duan/"style=" text-decoration:none "><p id="chu"> CÓ </p></a>
+        </div>
+        <button style=" width: 100px; border-radius: 10px;position: absolute; background-color:rgba(164, 113, 113, 0.511); border: solid; left:30vw;top:75vh" id="myButton"><p id="chu">KHONG</p></button>
+        <script>
+            const button = document.getElementById("myButton");
+            button.addEventListener("click", function() {
+            const randomX = Math.random() * 80 + 10;
+            const randomY = Math.random() * 80 + 10; 
+            button.style.left = randomX + "vw"; 
+            button.style.top = randomY + "vh";  
+        });
+    </script>
     </body>
 </html>
