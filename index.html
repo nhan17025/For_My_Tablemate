@@ -1,44 +1,95 @@
 <!DOCTYPE html>
-<html>
-    <head> 
-        <title> Special Gift </title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main2.css">
-        <link href="https://fonts.googleapis.com/css2?family=Borel&family=Pacifico&family=Patrick+Hand+SC&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
-    <script src="main.js"></script>
-    <body class="hinhnen" style="display:flex">
-        <div class="khung" style="rotate: 45deg;">
-            <div class="vuong"></div> 
-            <div class="tron2"></div>
-            <div class="tron1"></div> 
-        </div>
-        <div class="khungcon" style="rotate: 45deg;">
-            <div class="vuongcon"></div> 
-            <div class="tron2con"></div>
-            <div class="tron1con"></div> 
-        </div>
-        <div class="khungcon2" style="rotate: 45deg;">
-            <div class="vuongcon2"></div> 
-            <div class="tron2con2"></div>
-            <div class="tron1con2"></div> 
-        </div>
-        <div style="z-index: 3 ; background-color: rgba(255, 255, 255, 0); position: absolute; margin-top: 300px;">
-            <p id="chu" > DO YOU LOVE ME?</p>
-        </div>
-        <div style="justify-content: center;display: flex;align-items: center;position: absolute; background-color:rgba(164, 113, 113, 0.511); right:10vw;top:75vh; width: 100px; border-radius: 10px; border:solid ">
-            <a href="https://nhan17025.github.io/duan/"style=" text-decoration:none "><p id="chu"> CÓ </p></a>
-        </div>
-        <button style=" width: 100px; border-radius: 10px;position: absolute; background-color:rgba(164, 113, 113, 0.511); border: solid; left:10vw;top:75vh" id="myButton"><p id="chu">KHONG</p></button>
-        <script>
-            const button = document.getElementById("myButton");
-            button.addEventListener("click", function() {
-            const randomX = Math.random() * 80 + 10;
-            const randomY = Math.random() * 80 + 10; 
-            button.style.left = randomX + "vw"; 
-            button.style.top = randomY + "vh";  
-        });
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Pacifico&family=Patrick+Hand+SC&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Danh sách đối tượng di chuyển trong JS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0
+        }
+        canvas {
+            margin:0;
+            padding: 0;
+            width:100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            background-color: #b25d5d34
+        }
+        #chu{
+        font-family: "Patrick Hand SC", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: rgb(147, 72, 72);
+        text-shadow: 2px 2px 5px black;
+        position: absolute;
+        top:10vh;
+        }
+        #chu2{
+        font-family: "Patrick Hand SC", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: rgb(147, 72, 72);
+        text-shadow: 2px 2px 5px black;
+        top:10vh;
+        position: absolute;
+        top:15vh
+        }
+    </style>
+</head>
+<body style="display: flex; justify-content: center; align-items: center;">
+    <img src="tinhyeu.gif" style="position: absolute; width:30%; border: solid; border-radius: 20px; background-color: rgba(255, 255, 255, 0.332); border-width: 10px;margin-top:10vh">
+    <p id="chu"> Không nhân dịp chi cạ. Cọt ưng tặng quà cho egg hi vọng là sau ni we có thể gắn bó hơn hơn ngheeeee.</p>
+    <br>
+    <p id="chu2"> Egg còn nợ cọt quà bánh ngày 19/11 đóoo cọt hơi bị mong chờ bánh của egg.</p>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const objects = [];
+        for (let i = 0; i < 100; i++) {
+            objects.push({
+                x:canvas.width/2,
+                y:canvas.height/2, 
+                dx: (Math.random() - 0.5) * 2,  
+                dy: (Math.random() - 0.5) * 2,   
+                size: 15, 
+            });
+        }
+        function drawHeart(x, y, size) {
+            ctx.beginPath();
+            ctx.moveTo(x, y); 
+            ctx.bezierCurveTo(x - size / 2, y - size / 2, x - size, y + size / 2, x, y + size);
+            ctx.bezierCurveTo(x + size, y + size / 2, x + size / 2, y - size / 2, x, y);
+            ctx.closePath();
+            ctx.fillStyle = "red";
+            ctx.fill();
+        }
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            objects.forEach(obj => {
+                obj.x += obj.dx;
+                obj.y += obj.dy;
+                if (obj.x + obj.size > canvas.width || obj.x - obj.size < 0) {
+                    obj.dx = -obj.dx; 
+                }
+                if (obj.y + obj.size > canvas.height || obj.y - obj.size < 0) {
+                    obj.dy = -obj.dy;
+                }
+                drawHeart(obj.x, obj.y, obj.size);
+            });
+            requestAnimationFrame(update);
+        }
+        update();
     </script>
-    </body>
+
+</body>
 </html>
