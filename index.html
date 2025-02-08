@@ -1,95 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Pacifico&family=Patrick+Hand+SC&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Lời của Cọt Gửi Egg ❤️ </title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #f0f0f0
-        }
-        canvas {
-            margin:0;
-            padding: 0;
-            width:100%;
-            height: 100%;
-            background-color: #f0f0f0;
-            background-color: #b25d5d34
-        }
-        #chu{
-        font-family: "Patrick Hand SC", cursive;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 20px;
-        color: rgb(147, 72, 72);
-        text-shadow: 2px 2px 5px black;
-        position: absolute;
-        top:10vh;
-        }
-        #chu2{
-        font-family: "Patrick Hand SC", cursive;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 20px;
-        color: rgb(147, 72, 72);
-        text-shadow: 2px 2px 5px black;
-        top:10vh;
-        position: absolute;
-        top:15vh
-        }
-    </style>
-</head>
-<body style="display: flex; justify-content: center; align-items: center;">
-    <img src="tinhyeu.gif" style="position: absolute; width:30%; border: solid; border-radius: 20px; background-color: rgba(255, 255, 255, 0.332); border-width: 10px;margin-top:10vh">
-    <p id="chu"> Không nhân dịp chi cạ. Cọt ưng tặng quà cho egg hi vọng là sau ni we có thể gắn bó hơn hơn ngheeeee.Egg còn nợ cọt quà bánh ngày 19/11 đóoo cọt hơi bị mong chờ bánh của egg.</p>
-    <br>
-    <canvas id="canvas"></canvas>
-    <script>
-        const canvas = document.getElementById("canvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const objects = [];
-        for (let i = 0; i < 100; i++) {
-            objects.push({
-                x:canvas.width/2,
-                y:canvas.height/2, 
-                dx: (Math.random() - 0.5) * 2,  
-                dy: (Math.random() - 0.5) * 2,   
-                size: 15, 
-            });
-        }
-        function drawHeart(x, y, size) {
-            ctx.beginPath();
-            ctx.moveTo(x, y); 
-            ctx.bezierCurveTo(x - size / 2, y - size / 2, x - size, y + size / 2, x, y + size);
-            ctx.bezierCurveTo(x + size, y + size / 2, x + size / 2, y - size / 2, x, y);
-            ctx.closePath();
-            ctx.fillStyle = "red";
-            ctx.fill();
-        }
-        function update() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); 
-            objects.forEach(obj => {
-                obj.x += obj.dx;
-                obj.y += obj.dy;
-                if (obj.x + obj.size > canvas.width || obj.x - obj.size < 0) {
-                    obj.dx = -obj.dx; 
-                }
-                if (obj.y + obj.size > canvas.height || obj.y - obj.size < 0) {
-                    obj.dy = -obj.dy;
-                }
-                drawHeart(obj.x, obj.y, obj.size);
-            });
-            requestAnimationFrame(update);
-        }
-        update();
-    </script>
-
-</body>
+<html>
+    <head> 
+        <title> Món Quà Cho Trớng </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body class="hinhnen" style="display:flex">
+        <div style="flex-direction: column;" style="margin-left:10px">
+            <div>
+                <img src="cat1.jpg"  id="hinhanh">
+            </div>
+            <div>
+                <img src="cat2.jpg"  id="hinhanh">
+            </div>
+            <div>
+                 <img src="cat6.jpg"  id="hinhanh">
+            </div>
+        </div>
+        <div  style="flex-direction: column;">
+            <div>
+                <img src="egg1.jpg"  id="hinhanh">
+            </div>
+            <div style="  display: flex; justify-content: center; align-items: center; overflow: hidden; margin-top: 20px; margin-bottom: 20px;" id="hinhanhtt" > 
+                <div class="khung" style="rotate: 45deg;">
+                    <div class="vuong"></div> 
+                    <div class="tron2"></div>
+                    <div class="tron1"></div> 
+                </div>
+                <div style=" width: auto; height: auto; z-index: 1; border: thick solid white; border-radius: 25px;  background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px)">
+                    <p style=" font-family: monospace; font-size: 60px;"> I LOVE YOU </p>
+            </div>
+            </div>
+            <div>
+                 <img src="cat5.jpg"  id="hinhanh">
+            </div>
+        </div>
+        <div  style="flex-direction: column;">
+            <div>
+                <img src="cat3.jpg"  id="hinhanh">
+            </div>
+            <div>
+                <img src="cat4.jpg"  id="hinhanh">
+            </div>
+            <div>
+                 <img src="cat7.jpg"  id="hinhanh">
+            </div>
+        </div>
+    </body>
 </html>

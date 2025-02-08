@@ -1,0 +1,38 @@
+.tron1 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    bottom: 0px;
+    right: 50px;
+    border-radius: 50%;
+}
+.tron2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    bottom: 50px;
+    right:0px;
+    border-radius: 50%;
+}
+.vuong {
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+}
+.khung{
+    height: 150px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0); ;
+    position: absolute;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    transition: transform 0.2s;
+}
+.khung:hover {
+    transform: scale(1.2);
+}

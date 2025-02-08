@@ -1,0 +1,107 @@
+:root {
+    --mau: red;
+}
+.ptsl{
+    color:white;
+    font-size: 30px;
+}
+html, body {
+    margin: 0;
+}
+.hinhnen {
+    margin: 0px;
+    height: 100vh;
+    background-image: url(anh\ nen.jpg);
+    background-color: black;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+}
+#sl1:hover{
+    color:brown;
+}
+#sl2:hover{
+    color:orange;
+}
+#thang_1:hover{
+    color:aqua;
+}
+.link{
+    color: White;
+    text-decoration: none;
+}
+.link:hover{
+
+    color:blueviolet;
+}
+#hinhanh {
+    position: relative;
+    transition: transform 0.2s;
+    border-radius: 20px;
+    border: thick solid black;
+    margin:15px;
+    width: 29vw;
+    height: 27vh;
+    z-index: 1;
+   
+}
+#hinhanhtt {
+    border-radius: 20px;
+    margin:15px;
+    width: 29vw;
+    height: 27vh;
+    border-color: black;
+    border-width: thick;
+}  
+#hinhanh:hover{
+    border-color: bisque;
+    transform: scale(1.1);
+}
+.tron1 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    bottom: 0px;
+    right: 50px;
+    border-radius: 50%;
+}
+.tron2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    bottom: 50px;
+    right:0px;
+    border-radius: 50%;
+}
+.vuong {
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+}
+.khung{
+    height: 150px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0); ;
+    position: absolute;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    animation: dap 3s infinite;
+
+}
+@keyframes dap {
+    25% {
+        transform: scale(4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
