@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+       body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to top, #faf0f5, #ffeaea);
+      overflow: hidden;
+      position: relative;
+    }
+.circle {
+  width: 30px;
+  height: 30px;
+  background: #ff4d6d;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  transform: rotate(-45deg);
+}
+
+.circle::before,
+.circle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #ff4d6d;
+  border-radius: 50%;
+}
+
+.circle::before {
+  top: -15px;
+  left: 0;
+}
+
+.circle::after {
+  left: 15px;
+  top: 0;
+}
+   </style>
+</head>
+<body>
+  </div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <script>
+    const circles = document.querySelectorAll('.circle');
+
+let positions = [];
+let speeds = [];
+let letrai = [];
+let biendo= [];
+let tanso =[];
+let tgian = [];
+
+circles.forEach((circle, index) => {
+  positions[index] = window.innerHeight +50 ;
+  speeds[index] = (Math.random() * 4)+1;
+  letrai[index] = (Math.random() * (window.innerWidth - 10)) -100;
+  biendo[index] = Math.random()* 70;
+  tanso[index] = Math.random()*1;
+  tgian[index] = 0;
+});
+function move() {
+  circles.forEach((circle, index) => {
+    positions[index] -= speeds[index];
+    tgian[index] += 0.03;
+    if (positions[index] < -50) {
+      positions[index] = window.innerHeight; 
+      letrai[index] = (Math.random() * (window.innerWidth - 10)) - 100;
+      speeds[index] = Math.random() * 4;
+      biendo[index] = Math.random()* 70;
+      tanso[index] = Math.random()*1;
+    }
+    circle.style.top = positions[index] + 'px';
+    circle.style.left= letrai[index] + Math.sin(tgian[index] * tanso[index]) * biendo[index] + "px" ;    
+  });
+  requestAnimationFrame(move);
+}
+move();
+</script>
+  <div style="z-index: 3 ; background-color: rgba(255, 255, 255, 0); position: absolute; margin-top: 300px; margin-left: 300px; width:75%; ">
+    <p id="chu" >I hope you’re doing well. I’ve been thinking for a while about how to express everything that’s been on my mind, and I figured the best way to do that would be to write to you. Sometimes words feel easier to put on paper when they’re too heavy to say out loud.
+
+Lately, I’ve been feeling a mixture of emotions that are difficult to fully understand, let alone explain. But at the heart of it all, I just wanted you to know how much you mean to me and how deeply you’ve affected my life. Whether you realize it or not, your presence has brought light into some of the darker corners of my thoughts. You’ve given me moments of peace when I’ve been overwhelmed and strength when I’ve felt uncertain.
+
+There’s something about the way you listen — really listen — that makes me feel seen. And that means more to me than I can express. It’s rare to find someone who makes you feel completely safe just by being themselves. You do that for me, and I’m endlessly grateful.
+
+But with all that said, I also feel scared. Scared of being misunderstood, scared of losing what we have, scared of opening up too much and maybe being too vulnerable. That fear doesn’t come from anything you’ve done wrong. In fact, it’s probably because what we have feels so important to me that I don’t want to mess it up. It’s easy to overthink when something matters this much.
+
+There are days when I want to tell you everything — all the thoughts that crowd my mind, all the hopes I have, and even the things I regret. And there are days when I just want to sit in silence with you and let that be enough. Both feel real and necessary, and I guess that’s part of what makes this feeling so complex and genuine.
+
+I don’t expect anything from you, and I’m not writing this to put pressure on you. I just needed you to know how I feel — honestly and openly. You’ve become someone incredibly important to me, and that matters whether or not anything changes.
+
+Thank you for being patient, for being kind, and for just being you. Whatever happens next, I want you to know that you’ve made a difference in my life. And no matter what, I’ll always be thankful for that.
+
+With all sincerity,</p>
+  </div>
+</body>
+</html>
