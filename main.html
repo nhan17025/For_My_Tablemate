@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="favthu.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
     <style>
        body {
       margin: 0;
@@ -103,36 +103,34 @@
   <div class="circle"></div>
   <script>
     const circles = document.querySelectorAll('.circle');
-
-let positions = [];
-let speeds = [];
-let letrai = [];
-let biendo= [];
-let tanso =[];
-let tgian = [];
-
-circles.forEach((circle, index) => {
-  positions[index] = window.innerHeight +50 ;
-  speeds[index] = (Math.random() * 4)+1;
-  letrai[index] = (Math.random() * (window.innerWidth - 10)) -100;
-  biendo[index] = Math.random()* 70;
-  tanso[index] = Math.random()*1;
-  tgian[index] = 0;
-});
-function move() {
-  circles.forEach((circle, index) => {
-    positions[index] -= speeds[index];
-    tgian[index] += 0.03;
-    if (positions[index] < -50) {
-      positions[index] = window.innerHeight; 
-      letrai[index] = (Math.random() * (window.innerWidth - 10)) - 100;
-      speeds[index] = Math.random() * 4;
+    let positions = [];
+    let speeds = [];
+    let letrai = [];
+    let biendo= [];
+    let tanso =[];
+    let tgian = [];
+    circles.forEach((circle, index) => {
+      positions[index] = window.innerHeight +50 ;
+      speeds[index] = (Math.random() * 4)+1;
+      letrai[index] = (Math.random() * (window.innerWidth - 10)) -100;
       biendo[index] = Math.random()* 70;
       tanso[index] = Math.random()*1;
-    }
-    circle.style.top = positions[index] + 'px';
-    circle.style.left= letrai[index] + Math.sin(tgian[index] * tanso[index]) * biendo[index] + "px" ;    
-  });
+      tgian[index] = 0;
+    });
+  function move() {
+    circles.forEach((circle, index) => {
+      positions[index] -= speeds[index];
+      tgian[index] += 0.03;
+      if (positions[index] < -50) {
+        positions[index] = window.innerHeight; 
+        letrai[index] = (Math.random() * (window.innerWidth - 10)) - 100;
+        speeds[index] = Math.random() * 4;
+        biendo[index] = Math.random()* 70;
+        tanso[index] = Math.random()*1;
+      }
+      circle.style.top = positions[index] + 'px';
+      circle.style.left= letrai[index] + Math.sin(tgian[index] * tanso[index]) * biendo[index] + "px" ;    
+    });
   requestAnimationFrame(move);
 }
 move();
